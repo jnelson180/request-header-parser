@@ -19,7 +19,7 @@ app.listen("8080", function () {
 });
 */
 
-FOR PROD  
+// FOR PROD  
 app.listen(process.env.PORT, function () {
   console.log('Timestamp microservice listening on port ' + process.env.PORT);
 });
