@@ -3,7 +3,11 @@ var app = express();
 
 app.get('/', function(req, res) {
 	console.log("Visitor to home page.");
-  var ip = req.ip;
+   var ip = req.headers['x-forwarded-for'] || 
+     req.connection.remoteAddress || 
+     req.socket.remoteAddress ||
+     req.connection.socket.remoteAddress;
+     console.log(ip);
   var findLang = /^[a-zA-Z]*-?[a-zA-Z]*/gi;
   var lang = String(req.headers['accept-language']).match(findLang)[0];
   var findSoftware = (/\((.+?)\)/g).exec(req.headers['user-agent']);
@@ -13,13 +17,15 @@ app.get('/', function(req, res) {
   res.send(sendData);
 });
 
-/* FOR LOCAL TESTING
+// FOR LOCAL TESTING
+/*
 app.listen("8080", function () {
   console.log('Header parser service listening on port 8080');
 });
 */
 
 // FOR PROD  
+
 app.listen(process.env.PORT, function () {
   console.log('Timestamp microservice listening on port ' + process.env.PORT);
 });
