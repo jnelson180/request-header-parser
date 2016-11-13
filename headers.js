@@ -3,7 +3,7 @@ var app = express();
 
 app.get('/', function(req, res) {
 	console.log("Visitor to home page.");
-  var ip = req.connection.remoteAddress;
+  var ip = req.ip;
   var findLang = /^[a-zA-Z]*-?[a-zA-Z]*/gi;
   var lang = String(req.headers['accept-language']).match(findLang)[0];
   var findSoftware = (/\((.+?)\)/g).exec(req.headers['user-agent']);
@@ -19,9 +19,11 @@ app.listen("8080", function () {
 });
 */
 
-/* FOR PROD  */
+FOR PROD  
 app.listen(process.env.PORT, function () {
   console.log('Timestamp microservice listening on port ' + process.env.PORT);
 });
+
+
 
 
