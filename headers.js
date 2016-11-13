@@ -13,15 +13,15 @@ app.get('/', function(req, res) {
   res.send(sendData);
 });
 
-
+/* FOR LOCAL TESTING
 app.listen("8080", function () {
   console.log('Header parser service listening on port 8080');
 });
+*/
 
-
-/* FOR PROD 
+/* FOR PROD  */
 app.listen(process.env.PORT, function () {
   console.log('Timestamp microservice listening on port ' + process.env.PORT);
 });
-*/
+
 

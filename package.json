@@ -1,0 +1,27 @@
+{
+  "name": "headers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "headers.js",
+  "scripts": {
+    "start": "node headers.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnelson180/request-header-parser.git"
+  },
+  "keywords": [
+    "request",
+    "header",
+    "parser"
+  ],
+  "author": "Jake Nelson",
+  "license": "ISC",
+  "dependencies": {
+	"express": "~4.14.0"
+    },
+  "bugs": {
+    "url": "https://github.com/jnelson180/request-header-parser/issues"
+  },
+  "homepage": "https://github.com/jnelson180/request-header-parser"
+}
